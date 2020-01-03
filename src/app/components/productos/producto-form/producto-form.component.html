@@ -1,32 +1,45 @@
-<div class="container">
-    <form>
+<div class="row">
+    <div class="container">
         <br>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Título</label>
-            <input type="text" class="form-control" id="titulo" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Sección</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+        <h4><small>Formulario de Carga de Productos</small></h4>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" class="form-control" id="titulo" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select class="form-control" id="tipo">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
               </select>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect2">Categoria</label>
-            <input type="text" class="form-control" id="categoria" placeholder="">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripción</label>
-            <textarea class="form-control" id="descripción" rows="3"></textarea>
-        </div>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" class="form-control" id="categoria" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="descripción">Descripción</label>
+                <textarea class="form-control" id="descripción" rows="3"></textarea>
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Imagen</label>
-            <input type="file" class="form-control-file" id="imagen">
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="file" class="form-control-file" id="imagen">
+            </div>
+
+            <div class="form-group ">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col-md-8">
+                    <button type="submit" class="btn btn-outline-primary">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
