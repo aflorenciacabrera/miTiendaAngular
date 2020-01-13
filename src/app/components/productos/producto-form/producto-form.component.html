@@ -3,43 +3,56 @@
         <h4><small>Formulario de Carga de Productos</small></h4>
         <hr>
         <form (ngSubmit)="guardarProduct(forma)" #forma="ngForm">
-            <div class="form-group ">
+
+
+
+            <div class="form-group " [ngClass]="{'was-validated': titulo.errors?.required && titulo.touched}">
                 <label for="titulo">Título</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Título del producto" name="titulo" ngModel required minlength="5">
+                <input type="text" class="form-control " id="titulo" placeholder="Título del producto" name="titulo" [(ngModel)]="producto.titulo" #titulo="ngModel" required>
+                <!--minlength="5" -->
+                <div class="invalid-feedback">
+                    <label>Este campo es requerido</label>
+                </div>
             </div>
             <div class="form-row ">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-6" [ngClass]="{'was-validated': categoria.errors?.required && categoria.touched}">
 
-                    <label for="tipo">Categoria</label>
-                    <select class="form-control" id="tipo" name="tipo" ngModel>
+                    <label for="categoria">Categoria</label>
+                    <select class="form-control " id="categoria" name="categoria" [(ngModel)]="producto.categoria" #categoria="ngModel" required>                      
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
-                        </select>
+                    </select>
+                    <div class="invalid-feedback">
+                        <label>Este campo es requerido</label>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="categoria">Precio</label>
-                    <input type="number" class="form-control" id="categoria" placeholder="" name="titulo" ngModel>
+                <div class="form-group col-md-6 " [ngClass]="{'was-validated': precio.errors?.required && precio.touched}">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control " id="precio" placeholder="$" name="precio" [(ngModel)]="producto.precio" #precio="ngModel" min="0" required>
+                    <div class="invalid-feedback">
+                        <label>Este campo es requerido</label>
+                    </div>
                 </div>
-
             </div>
+
             <div class="form-group  ">
                 <label for="descripción">Descripción</label>
-                <textarea class="form-control" id="descripción" rows="3" name="descripción" ngModel></textarea>
+                <textarea class="form-control" id="descripción" rows="3" name="descripción" [(ngModel)]="producto.descripcion"></textarea>
             </div>
 
             <div class="form-group ">
                 <label for="imagen">Imagen</label>
-                <input type="file" class="form-control-file" id="imagen" name="imagen" ngModel>
+                <input type="file" class="form-control-file" id="imagen" name="imagen" [(ngModel)]="producto.imagen">
             </div>
 
             <div class="form-group  ">
                 <!-- <label class="col-2 col-form-label">&nbsp;</label> -->
                 <!-- <div class="input-group col-md-10">                  
                 </div> -->
-                <button type="submit" class="btn btn-outline-primary">
+                <button type="submit" class="btn btn-outline-primary" [disabled]="forma.invalid">
                     Guardar
                 </button>
             </div>

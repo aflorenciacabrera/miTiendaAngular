@@ -6,21 +6,23 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./producto-form.component.css']
 })
 export class ProductoFormComponent implements OnInit {
-  productos = {
-    titulo: '',
-    tipo: '',
-    categoria: '',
-    descripcion: '',
-    imagen: ''
-  }
+  producto = {
+    titulo: null,
+    categoria: null,
+    precio: null,
+    descripcion: null,
+    imagen: null
+  };
   constructor() { }
 
   ngOnInit() {
-   
+
   }
 
   guardarProduct(forma: NgForm) {
     console.log('ngForm', forma);
+    console.log('productos por defecto', this.producto);
+    console.log('productos', forma.value);
 
   }
 

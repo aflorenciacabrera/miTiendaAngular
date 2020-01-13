@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import {APP_ROUTING} from './app.routes';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { BodyComponent } from './shared/body/body.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { ProductoFormComponent } from './components/productos/producto-form/producto-form.component';
 import { ProductoGaleriaComponent } from './components/productos/producto-galeria/producto-galeria.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ProductoFormComponent,
     ProductoGaleriaComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
