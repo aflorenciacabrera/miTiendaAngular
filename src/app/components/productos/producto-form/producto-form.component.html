@@ -17,13 +17,10 @@
             <div class="form-row ">
                 <div class="form-group col-md-6" [ngClass]="{'was-validated': categoria.errors?.required && categoria.touched}">
 
-                    <label for="categoria">Categoria</label>
-                    <select class="form-control " id="categoria" name="categoria" [(ngModel)]="producto.categoria" #categoria="ngModel" required>                      
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                    <label for="categoria">Categoría</label>
+                    <select class="form-control " id="categoria" name="categoria" [(ngModel)]="producto.categoria" #categoria="ngModel" required>      
+                            <option value="">Seleccione una categoria</option>                
+                    <option *ngFor="let cat of catego" value={{cat.id}}> {{cat.descripcion}}</option> 
                     </select>
                     <div class="invalid-feedback">
                         <label>Este campo es requerido</label>

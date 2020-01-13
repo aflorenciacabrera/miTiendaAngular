@@ -8,11 +8,29 @@ import {NgForm} from '@angular/forms';
 export class ProductoFormComponent implements OnInit {
   producto = {
     titulo: null,
-    categoria: null,
+    categoria: '',
     precio: null,
     descripcion: null,
     imagen: null
   };
+
+  catego = [{
+    id: '1',
+    descripcion: '3D',
+  },
+  {
+    id: '2',
+    descripcion: 'Pascua',
+  },
+  {
+    id: '3',
+    descripcion: 'Reposteria',
+  },
+  {
+    id: '4',
+    descripcion: 'Comida',
+  }];
+
   constructor() { }
 
   ngOnInit() {
@@ -25,5 +43,6 @@ export class ProductoFormComponent implements OnInit {
     console.log('productos', forma.value);
 
   }
+
 
 }
