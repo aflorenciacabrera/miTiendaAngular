@@ -13,6 +13,8 @@ import { ProductoGaleriaComponent } from './components/productos/producto-galeri
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
+import { ClienteFormComponent } from './components/clientes/cliente-form/cliente-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ProductoFormComponent,
     ProductoGaleriaComponent,
     NavbarComponent,
+   
+    ClienteFormComponent,
   ],
   imports: [
     BrowserModule,

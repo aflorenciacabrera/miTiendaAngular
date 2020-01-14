@@ -11,8 +11,8 @@ export class FooterComponent implements OnInit {
   apellido: string;
   constructor() { 
     this.anio = new Date().getFullYear();
-    this.nombre = 'Florencia';
-    this.apellido = 'Cabrera';
+    this.nombre = '';
+    this.apellido = 'SIFC';
   }
 
   ngOnInit() {
