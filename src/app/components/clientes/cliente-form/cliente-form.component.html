@@ -4,7 +4,7 @@
 <form [formGroup]="clienteForm" class="form" (ngSubmit)="guardarForm()">
     <div>
 
-        <div class="form-group row [ngClass]=" { 'was-validated': clienteForm.get( 'nombre').invalid} "">
+        <div class="form-group row " [ngClass]=" { 'was-validated': clienteForm.get( 'nombre').invalid} ">
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
