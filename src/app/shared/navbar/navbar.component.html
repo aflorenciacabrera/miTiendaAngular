@@ -19,6 +19,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" [routerLink]="['productos/galeria']">Galeria</a>
                     <a class="dropdown-item" [routerLink]="['productos/nuevo']">Nuevo</a>
+                    <a class="dropdown-item" [routerLink]="['productos/stock']">Stock</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"></a>
                 </div>
@@ -40,11 +41,9 @@
                   Pedidos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['/']">Nuevo</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Stock</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Pendientes</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Listos</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Entregados</a>
+                    <a class="dropdown-item" [routerLink]="['pedidos/nuevo']">Nuevo</a>
+                    <a class="dropdown-item" [routerLink]="['pedidos/lista']">lista</a>
+
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"></a>
                 </div>

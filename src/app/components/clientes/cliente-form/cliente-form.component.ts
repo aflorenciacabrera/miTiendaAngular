@@ -18,10 +18,10 @@ export class ClienteFormComponent implements OnInit {
 
   constructor() {
     this.clienteForm = new FormGroup({
-      nombre: new FormControl(null, [Validators.required]),
+      nombre: new FormControl(null, [Validators.required, this.validarNombre]),
       apellido : new FormControl(null, Validators.required),
       correo : new FormControl(null, [ Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
-      telefono : new FormControl(null,  [Validators.required])
+      telefono : new FormControl(null,  [Validators.required, Validators.min(0)])
     });
 
     // *** para setear los valores por defecto
@@ -41,7 +41,7 @@ export class ClienteFormComponent implements OnInit {
   }
 
 
-  guardarForm(){
+  guardarForm() {
     console.log(this.clienteForm.value);
     console.log(this.clienteForm);
 
@@ -56,4 +56,15 @@ export class ClienteFormComponent implements OnInit {
     //   }
     // });
   }
+  // *** crear bandera de error
+  validarNombre(control: FormControl): { [s: string]: boolean} {
+    if (control.value === 'Flor') {
+      return {
+
+        validarNombre: true
+      };
+    }
+    return null;
+  }
+
 }

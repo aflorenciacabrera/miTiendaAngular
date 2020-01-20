@@ -3,12 +3,12 @@
 }
 
 .form-control-feedback {
-    position: absolute;
+    /* position: absolute;
     top: .5rem;
     right: 1.5rem;
     z-index: 2;
     display: block;
     text-align: center;
-    pointer-events: none;
+    pointer-events: none; */
     color: red;
 }

@@ -14,6 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { ClienteFormComponent } from './components/clientes/cliente-form/cliente-form.component';
+import { PedidoFormComponent } from './components/pedidos/pedido-form/pedido-form.component';
+import { PedidoListComponent } from './components/pedidos/pedido-list/pedido-list.component';
+import { ClienteListComponent } from './components/clientes/cliente-list/cliente-list.component';
+import { ProductoDetallesComponent } from './components/productos/producto-detalles/producto-detalles.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,11 @@ import { ClienteFormComponent } from './components/clientes/cliente-form/cliente
     ProductoFormComponent,
     ProductoGaleriaComponent,
     NavbarComponent,
-   
     ClienteFormComponent,
+    PedidoFormComponent,
+    PedidoListComponent,
+    ClienteListComponent,
+    ProductoDetallesComponent,
   ],
   imports: [
     BrowserModule,
