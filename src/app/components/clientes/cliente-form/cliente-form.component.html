@@ -1,7 +1,7 @@
-<h4><small>Formulario de Carga de Clientes</small></h4>
+<h4><small>Formulario de carga de Clientes</small></h4>
 <hr>
 
-<form [formGroup]="clienteForm" (ngSubmit)="guardarForm()" class="was-validated">
+<form [formGroup]="clienteForm" (ngSubmit)="guardarForm()">
 
     <!-- [ngClass]="{'has-danger': clienteForm.get('nombre').invalid}" [ngClass]="{'was-validated': clienteForm.get('nombre').valid}" -->
     <div class="form-group row">
@@ -9,7 +9,7 @@
         <div class="col-md-8">
 
             <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" is-invalid>
-            <div *ngIf="clienteForm.get('nombre').errors?.required && clienteForm.get('nombre').touched" class="invalid-feedback">
+            <div *ngIf="clienteForm.get('nombre').errors?.required && clienteForm.get('nombre').touched" class="form-control-feedback">
                 Este campo es requerido
             </div>
 
