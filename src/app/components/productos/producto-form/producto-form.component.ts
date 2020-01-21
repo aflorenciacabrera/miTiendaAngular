@@ -11,7 +11,7 @@ export class ProductoFormComponent implements OnInit {
     categoria: '',
     precio: null,
     descripcion: null,
-    imagen: null
+    imagenProducto: null
   };
 
   catego = [{
