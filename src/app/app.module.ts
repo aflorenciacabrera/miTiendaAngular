@@ -18,6 +18,8 @@ import { PedidoFormComponent } from './components/pedidos/pedido-form/pedido-for
 import { PedidoListComponent } from './components/pedidos/pedido-list/pedido-list.component';
 import { ClienteListComponent } from './components/clientes/cliente-list/cliente-list.component';
 import { ProductoDetallesComponent } from './components/productos/producto-detalles/producto-detalles.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ProductoDetallesComponent } from './components/productos/producto-detal
     PedidoListComponent,
     ClienteListComponent,
     ProductoDetallesComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
