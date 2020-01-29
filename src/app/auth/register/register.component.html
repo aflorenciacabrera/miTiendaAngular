@@ -3,51 +3,37 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Registro</div>
-
                 <div class="card-body">
-                    <form>
-
-
+                    <form (ngSubmit)="onSubmit(registro)" #registro="ngForm">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Usuario</label>
-
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control " name="name" required autocomplete="name" autofocus>
-
-
-
-
+                                <input id="name" type="text" class="form-control " placeholder="Nombre de Usuario" [(ngModel)]="usuario.name" name="name" required autocomplete="name" autofocus>
+                                <span *ngIf="registro.submitted && registro.controls['name'].errors" class="text-danger animared fadeIn">Este correo es obligatorio</span>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
-
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control " name="email" required autocomplete="email">
+                                <input id="email" type="email" class="form-control " placeholder="Correo Electrónico" [(ngModel)]="usuario.email" name="email" required email autocomplete="email">
 
+                                <span *ngIf="registro.submitted && registro.controls['email'].errors" class="text-danger animared fadeIn">Este correo es obligatorio</span>
 
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
-
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
-
-
+                                <input id="password" type="password" class="form-control " placeholder="Contraseña" [(ngModel)]="usuario.password" name="password" required maxlength="8" autocomplete="new-password">
+                                <span *ngIf="registro.submitted && registro.controls['password'].errors" class="text-danger animared fadeIn">Este correo es obligatorio con 8 caractes</span>
                             </div>
                         </div>
-
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirmar Contraseña</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
-
+                        </div> -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
