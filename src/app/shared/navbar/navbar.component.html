@@ -66,17 +66,17 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
         </ul>
-        <form class="form-inline my-2 my-lg-1">
+        <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Buscar</button>
         </form>
 
         <div class="form-inline my-2 my-lg-0">
 
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a role="button" class="btn btn-secondary " href="#">Acceder</a>
-                    <a role="button" class="btn btn-secondary" href="#">Registrarte</a>
+                    <a role="button" class="btn btn-secondary " [routerLink]="['auth/acceso']">Acceder</a>
+                    <a role="button" class="btn btn-secondary" [routerLink]="['auth/registro']">Registrarte</a>
 
                 </div>
             </div>

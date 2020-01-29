@@ -5,6 +5,8 @@ import { ClienteFormComponent } from './components/clientes/cliente-form/cliente
 import { ClienteListComponent } from './components/clientes/cliente-list/cliente-list.component';
 import { PedidoFormComponent } from './components/pedidos/pedido-form/pedido-form.component';
 import { PedidoListComponent } from './components/pedidos/pedido-list/pedido-list.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const APP_ROUTES: Routes = [
     {path: 'productos/galeria', component: ProductoGaleriaComponent},
@@ -12,7 +14,9 @@ const APP_ROUTES: Routes = [
     {path: 'clientes/lista', component: ClienteListComponent},
     {path: 'clientes/nuevo', component: ClienteFormComponent},
     {path: 'pedidos/lista', component: PedidoListComponent},
-    {path: 'pedidos/nuevo', component: PedidoFormComponent}
+    {path: 'pedidos/nuevo', component: PedidoFormComponent},
+    {path: 'auth/acceso', component: LoginComponent},
+    {path: 'auth/registro', component: RegisterComponent}
 ];
 
 // tslint:disable-next-line:variable-name
