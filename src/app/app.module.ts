@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ProductoFormComponent } from './components/productos/producto-form/producto-form.component';
 import { ProductoGaleriaComponent } from './components/productos/producto-galeria/producto-galeria.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { ClienteFormComponent } from './components/clientes/cliente-form/cliente-form.component';
@@ -39,6 +40,7 @@ import { RegisterComponent } from './auth/register/register.component';
     RegisterComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     APP_ROUTING,
