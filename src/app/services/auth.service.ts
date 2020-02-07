@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { UsuarioModel } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,29 @@ export class AuthService {
 
   constructor( private http: HttpClient) { }
 
-  
+  logout() {
+
+  }
+
+  login( usuario: UsuarioModel) {
+
+  }
+
+  nuevoUsuario( usuario: UsuarioModel) {
+    const authData = {
+      // constuccion del objeto
+      // email: usuario.email,
+      // password: usuario.password,
+
+      // forma simplificada de la creación del objeto pero trae completo las propiedades
+      ...usuario,
+      getToken: true
+    };
+    return this.http.post(
+     `${this.url}/login`,
+     authData // info que se manda al servidor por post
+    );
+
+  }
+
 }

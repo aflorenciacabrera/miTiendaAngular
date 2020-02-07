@@ -4,3 +4,28 @@ footer {
     bottom: 0px;
     width: 100%;
 }
+
+.element {
+    position: fixed;
+    bottom: -10px;
+    right: 25px;
+    z-index: 9999;
+    width: 70px;
+    height: 70px;
+}
+
+.chat {
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    z-index: 9999;
+}
+
+
+/* .boton {
+    right: 65px;
+    bottom: 5px;
+    background-color: #ffc414;
+    color: #ffffff;
+    border: none!important;
+} */

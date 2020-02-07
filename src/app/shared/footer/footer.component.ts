@@ -9,13 +9,23 @@ export class FooterComponent implements OnInit {
   anio: number;
   nombre: string;
   apellido: string;
-  constructor() { 
+  chat = false;
+  constructor() {
     this.anio = new Date().getFullYear();
     this.nombre = '';
     this.apellido = 'SIFC';
+
   }
 
   ngOnInit() {
   }
 
+  verChat(chat) {
+
+   if (chat) {
+    this.chat = false;
+   } else {
+    this.chat = true;
+   }
+    }
 }
