@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   usuario: UsuarioModel;
-  constructor( private auth:AuthService) { }
+  constructor( private auth: AuthService) { }
 
   ngOnInit() {
     this.usuario = new UsuarioModel();

@@ -33,12 +33,12 @@ export class AuthService {
       // forma simplificada de la creación del objeto pero trae completo las propiedades
       ...usuario,
       getToken: true
+     
     };
+  
     return this.http.post(
-     `${this.url}/login`,
-     authData // info que se manda al servidor por post
-    );
-
+     `${this.url}/login`, authData // info que se manda al servidor por pos
+     );
   }
 
 }
