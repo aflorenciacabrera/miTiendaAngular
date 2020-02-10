@@ -1,4 +1,4 @@
-<div class="chat" *ngIf="chat">
+<div class="chat" [ngClass]="{'mostrar': chat , 'ocultar':!chat}">
 
     <iframe allow="microphone;" style="position: null;" width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/c59cfb7a-d3b6-469e-b546-bc4fac1e31bd">
        

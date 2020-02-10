@@ -35,9 +35,8 @@ export class AuthService {
       getToken: true
      
     };
-  
-    return this.http.post(
-     `${this.url}/login`, authData // info que se manda al servidor por pos
+    const url = this.url + '/register';
+    return this.http.post(url, authData //  `${this.url}/register` info que se manda al servidor por pos
      );
   }
 

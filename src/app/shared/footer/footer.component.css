@@ -29,3 +29,11 @@ footer {
     color: #ffffff;
     border: none!important;
 } */
+
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    display: none;
+}
