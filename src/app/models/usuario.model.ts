@@ -3,5 +3,6 @@ export class UsuarioModel {
     email: string;
     password: string;
     rol: string;
+  gettoken: string;
 
 }
