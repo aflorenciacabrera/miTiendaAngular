@@ -59,7 +59,7 @@ export class AuthService {
     const json = JSON.stringify(authData);
     const params = 'json=' + json;
     const url = this.url + '/register';
-     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post(url , params, {headers});
   }

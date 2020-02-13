@@ -29,36 +29,31 @@ export class RegisterComponent implements OnInit {
 
     //  this.auth.nuevoUsuario(this.usuario).subscribe( resp => {
     //    console.log(resp);
+    this.usuario.rol = 'cliente';
+    console.log(this.usuario);
+   
     this.auth.register(this.usuario).subscribe(
       resp => {
         this.status = resp.status;
         if (this.status == 'success') {
           // Vaciar el formulario
           //  this.usuario = this.usuarioLimpiar;
-          swal("Here's a message!")
-          swal("Good job!", "You clicked the button!", "success");
-          // swal('Exito!', 'El Usuario fue registrado Correctamente', 'success').then((resuta) => {
-          //   if (resuta.value) {
-          //     // Redirect
-          //     registro.reset();
+          registro.reset();
+         
 
-          //     // window.location.reload();
-
-          //   }
-          // });
-
-          //  console.log(resp.message);
+          console.log(resp.message);
+          
         } else {
 
           this.status = 'error';
-          swal('Oops!', 'Este Usuario ya se encuentra registrado', 'error');
+        
           console.log(resp.error.message);
         }
       },
       error =>{
-        // this.status = 'error';
-        swal('Oops!', 'Este Usuario ya se encuentra registrado', 'error');
-        // console.log(error.error.message);
+         this.status = 'error';
+      
+        console.log(error.error.message);
       });
 
     }
