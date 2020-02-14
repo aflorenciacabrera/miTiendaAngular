@@ -73,10 +73,10 @@ export class AuthService {
 
       // forma simplificada de la creación del objeto pero trae completo las propiedades
       ...usuario,
-      getToken: false
+      getToken: true
 
     };
-    
+    console.log(authData);
     const json = JSON.stringify(authData);
     const params = 'json=' + json;
     const url = this.url + '/login';
