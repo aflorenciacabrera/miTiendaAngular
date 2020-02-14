@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, DoCheck {
     identity: any;
     token: any;
   constructor(private auth: AuthService) {
@@ -17,5 +17,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     console.log('cargado');
   }
-
+  ngDoCheck() {
+    this.identity = this.auth.getIdentity();
+    this.token = this.auth.getToken();
+  }
 }
