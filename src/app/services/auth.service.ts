@@ -64,20 +64,22 @@ export class AuthService {
     return this.http.post(url , params, {headers});
   }
 
-  acceso(usuario: UsuarioModel, getToken = null): Observable<any> {
+  acceso(usuario: UsuarioModel, getToken): Observable<any> {
+    console.log(getToken)
+    usuario.getToken = getToken;
+    // const authData = {
+    //   // constuccion del objeto
+    //   // email: usuario.email,
+    //   // password: usuario.password,
+
+    //   // forma simplificada de la creación del objeto pero trae completo las propiedades
+    //   ...usuario,
     
-    const authData = {
-      // constuccion del objeto
-      // email: usuario.email,
-      // password: usuario.password,
 
-      // forma simplificada de la creación del objeto pero trae completo las propiedades
-      ...usuario,
-      getToken: true
+    // };
 
-    };
-    console.log(authData);
-    const json = JSON.stringify(authData);
+    console.log(usuario);
+    const json = JSON.stringify(usuario);
     const params = 'json=' + json;
     const url = this.url + '/login';
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');

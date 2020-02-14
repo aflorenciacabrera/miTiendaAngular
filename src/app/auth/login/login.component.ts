@@ -20,28 +20,26 @@ export class LoginComponent implements OnInit {
   login(acceder: NgForm) {
     if (acceder.invalid) { return; }
     // console.log(acceder);
-    this.auth.acceso(this.usuario).subscribe(
+    this.auth.acceso(this.usuario, 'true').subscribe(
       resp => {
         // token
+        console.log('con token');
         console.log(resp);
         // objeto de usuario identificado
-    
-      },
-      error => {
-        console.log( error as any);
-      }
-    );
-
-    this.auth.acceso(this.usuario, true).subscribe(
-      resp => {
-        console.log(resp);
-
-        
+        this.auth.acceso(this.usuario, 'false').subscribe(
+          // tslint:disable-next-line:no-shadowed-variable
+          resp => {
+            console.log('sin token');
+            console.log(resp);
+          },
+          error => {
+            console.log( error as any);
+          }
+        );
       },
       error => {
         console.log( error as any);
       }
     );
   }
-
 }
