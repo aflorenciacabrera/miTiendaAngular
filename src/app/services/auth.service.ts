@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
     public url: string;
+    public identity: any;
+    public token: any;
 
   // crear nuevo usuario
 
@@ -85,6 +87,27 @@ export class AuthService {
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http.post(url , params, {headers});
+  }
+
+  getIdentity() {
+    const identity = JSON.parse(localStorage.getItem('identity'));
+
+    if ( identity !== 'undefined') {
+      this.identity = identity;
+    } else {
+      this.identity = null;
+    }
+    return this.identity;
+  }
+
+  getToken() {
+    const token = localStorage.getItem('token');
+    if (token !== 'undefined') {
+      this.token = token;
+    } else {
+      this.token = null;
+    }
+    return this.token;
   }
 
 }

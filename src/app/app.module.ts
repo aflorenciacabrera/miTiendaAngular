@@ -21,6 +21,7 @@ import { ClienteListComponent } from './components/clientes/cliente-list/cliente
 import { ProductoDetallesComponent } from './components/productos/producto-detalles/producto-detalles.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { DefaultComponent } from './components/default/default.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RegisterComponent } from './auth/register/register.component';
     ProductoDetallesComponent,
     LoginComponent,
     RegisterComponent,
+    DefaultComponent,
   ],
   imports: [
     HttpClientModule,

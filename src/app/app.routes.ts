@@ -7,6 +7,7 @@ import { PedidoFormComponent } from './components/pedidos/pedido-form/pedido-for
 import { PedidoListComponent } from './components/pedidos/pedido-list/pedido-list.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { DefaultComponent } from './components/default/default.component';
 
 const APP_ROUTES: Routes = [
     {path: 'productos/galeria', component: ProductoGaleriaComponent},
@@ -16,7 +17,12 @@ const APP_ROUTES: Routes = [
     {path: 'pedidos/lista', component: PedidoListComponent},
     {path: 'pedidos/nuevo', component: PedidoFormComponent},
     {path: 'auth/acceso', component: LoginComponent},
-    {path: 'auth/registro', component: RegisterComponent}
+    {path: 'logout/:sure', component: LoginComponent},
+    {path: 'auth/registro', component: RegisterComponent},
+    {path: '', component: DefaultComponent},
+    {path: '**', component: DefaultComponent},
+    {path: 'home', component: DefaultComponent}
+
 ];
 
 // tslint:disable-next-line:variable-name
