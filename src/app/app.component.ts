@@ -19,6 +19,7 @@ export class AppComponent implements OnInit, DoCheck {
     console.log('cargado');
   }
   ngDoCheck() {
+    // ejecuta cuando hay un cambio en la aplicacion
     this.identity = this.auth.getIdentity();
     this.token = this.auth.getToken();
   }

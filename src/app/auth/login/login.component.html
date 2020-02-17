@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">Acceso</div>
+                <div class="card-header text-center">Acceso</div>
                 <div class="card-body">
                     <form (ngSubmit)="login(acceder)" #acceder="ngForm">
                         <div class="form-group row">
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary">
                                    Aceptar
                                 </button>
@@ -40,6 +40,17 @@
                                     </a>
                             </div>
                         </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-2">
+                                <label for="">Si todavía no tenes tu cuenta? </label>
+                                <a class="btn btn-link" [routerLink]="['auth/registro']">
+                                       Registrate
+                                    </a>
+                                <a role="button" class="btn btn-secondary" [routerLink]="['auth/registro']">Registrarte</a>
+
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

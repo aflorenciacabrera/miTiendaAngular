@@ -6,67 +6,84 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['home']"> <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Administración</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- publico sin login -->
+            <div *ngIf="!identity">
+                <li class="nav-item active dropdown">
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Productos
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['productos/galeria']">Galeria</a>
+                        <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+            </div>
+            <!-- Privado con login -->
+            <div *ngIf="identity">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['home']"> <i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Administración</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Productos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['productos/galeria']">Galeria</a>
-                    <a class="dropdown-item" [routerLink]="['productos/nuevo']">Nuevo</a>
-                    <a class="dropdown-item" [routerLink]="['productos/stock']">Stock</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"></a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <!-- dropdown-toggle -->
-                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['productos/galeria']">Galeria</a>
+                        <a class="dropdown-item" [routerLink]="['productos/nuevo']">Nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['productos/stock']">Stock</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <!-- dropdown-toggle -->
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Clientes
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['clientes/lista']">Lista</a>
-                    <a class="dropdown-item" [routerLink]="['clientes/nuevo']">Nuevo</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"></a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['clientes/lista']">Lista</a>
+                        <a class="dropdown-item" [routerLink]="['clientes/nuevo']">Nuevo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Pedidos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['pedidos/nuevo']">Nuevo</a>
-                    <a class="dropdown-item" [routerLink]="['pedidos/lista']">lista</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['pedidos/nuevo']">Nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['pedidos/lista']">lista</a>
 
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"></a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Ventas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['/']">Nueva</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Gastos</a>
-                    <a class="dropdown-item" [routerLink]="['/']">Control</a>
-                    <a class="dropdown-item" [routerLink]="['/']"></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"></a>
-                </div>
-            </li>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/']">Nueva</a>
+                        <a class="dropdown-item" [routerLink]="['/']">Gastos</a>
+                        <a class="dropdown-item" [routerLink]="['/']">Control</a>
+                        <a class="dropdown-item" [routerLink]="['/']"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
 
-            <!-- <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li> -->
+            </div>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" *ngIf="identity">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Buscar</button>
         </form>
@@ -75,7 +92,7 @@
 
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a role="button" class="btn btn-secondary " [routerLink]="['auth/acceso']">Acceder</a>
+                    <a role="button" class="btn btn-secondary " [routerLink]="['auth/acceso']">Ingresar</a>
                     <a role="button" class="btn btn-secondary" [routerLink]="['auth/registro']">Registrarte</a>
 
                 </div>
