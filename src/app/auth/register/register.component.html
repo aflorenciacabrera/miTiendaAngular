@@ -36,12 +36,19 @@
                             </div>
                         </div> -->
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-8 offset-md-3">
                                 <button type="submit" class="btn btn-primary" [disabled]="registro.invalid">
                                    Aceptar
                                 </button>
+                                <span for=""> Ya tengo mi cuenta.</span>
+                                <a class="btn btn-link" [routerLink]="['/auth/acceso']">
+                                       Acceder
+                                    </a>
                             </div>
+
                         </div>
+
+
                     </form>
                 </div>
             </div>
