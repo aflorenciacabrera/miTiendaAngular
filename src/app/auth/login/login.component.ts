@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this._route.params.subscribe(params =>{
-      const logout = +params['sure'];
+      const logout = +params['sure'] ;
       if (logout === 1) {
         localStorage.removeItem('identity');
         localStorage.removeItem('token');
