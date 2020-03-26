@@ -12,7 +12,8 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 export class LoginComponent implements OnInit {
    token: any;
    identity: any;
-  usuario: UsuarioModel = new UsuarioModel();
+   usuario: UsuarioModel = new UsuarioModel();
+   status="succes";
  
 
   constructor(
@@ -34,6 +35,8 @@ export class LoginComponent implements OnInit {
         // token
         console.log('con token');
         console.log(resp);
+        if (resp.status !== 'error') {
+          this.status = 'succes';
         this.token = resp;
         localStorage.setItem('token', this.token);
         // objeto de usuario identificado
@@ -44,11 +47,17 @@ export class LoginComponent implements OnInit {
             console.log(resp);
             this.identity = resp;
             localStorage.setItem('identity', JSON.stringify(this.identity));
+             // redirect
+            this._router.navigate(['home']);
+
           },
           error => {
             console.log( error as any);
           }
         );
+      } else {
+        this.status = 'error';
+      }
       },
       error => {
         console.log( error as any);
@@ -66,7 +75,7 @@ export class LoginComponent implements OnInit {
         this.token = null;
 
         // redirect
-        this._router.navigate(['home']);
+        this._router.navigate(['/']);
       }
     });
   }
