@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+import {AuthService} from '../../../services/auth.service';
+import {ProductoModel} from '../../../models/producto.model';
 @Component({
   selector: 'app-producto-form',
   templateUrl: './producto-form.component.html',
-  styleUrls: ['./producto-form.component.css']
+  styleUrls: ['./producto-form.component.css'],
+  providers: [AuthService]
 })
 export class ProductoFormComponent implements OnInit {
-  producto = {
-    titulo: null,
-    categoria: '',
-    precio: null,
-    descripcion: null,
-    imagenProducto: null
-  };
+
+    producto : ProductoModel = new ProductoModel();
+    
+  // producto = {
+  //   titulo: null,
+  //   categoria: '',
+  //   precio: null,
+  //   descripcion: null,
+  //   imagenProducto: null
+  // };
 
   catego = [{
     id: '1',
@@ -31,7 +38,15 @@ export class ProductoFormComponent implements OnInit {
     descripcion: 'Comida',
   }];
 
-  constructor() { }
+  public page_title: string;
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private auth: AuthService,
+  ) {
+    this.page_title = 'Alta producto'
+   }
 
   ngOnInit() {
 
