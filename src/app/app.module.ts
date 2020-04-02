@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ProductoFormComponent } from './components/productos/producto-form/producto-form.component';
 import { ProductoGaleriaComponent } from './components/productos/producto-galeria/producto-galeria.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 import { ClienteFormComponent } from './components/clientes/cliente-form/cliente-form.component';
@@ -20,6 +21,10 @@ import { ClienteListComponent } from './components/clientes/cliente-list/cliente
 import { ProductoDetallesComponent } from './components/productos/producto-detalles/producto-detalles.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { DefaultComponent } from './components/default/default.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ProductoEditComponent } from './components/productos/producto-edit/producto-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +42,17 @@ import { RegisterComponent } from './auth/register/register.component';
     ProductoDetallesComponent,
     LoginComponent,
     RegisterComponent,
+    DefaultComponent,
+    ProductoEditComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     APP_ROUTING,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

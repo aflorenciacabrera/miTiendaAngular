@@ -1,8 +1,22 @@
-<footer class="footer bg-dark text-center">
+<div class="chat" [ngClass]="{'mostrar': chat , 'ocultar':!chat}">
+
+    <iframe allow="microphone;" style="position: null;" width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/c59cfb7a-d3b6-469e-b546-bc4fac1e31bd">
+       
+  </iframe>
+</div>
+
+
+<footer class="footer bg-dark ">
     <div class="container">
-        <p>
+        <p class="text-center">
             &copy; {{nombre}} {{apellido}} {{anio}}
         </p>
     </div>
-
+    <!-- href="https://web.whatsapp.com/send?phone=5493795053426" -->
+    <!-- <div class="element">
+        <a class="boton " type="button" (click)="verChat(chat)" target="_blank">
+            <img src="./assets/img/chatbot-icono.png" class="card-img-top" alt="">
+            <h1><i class="fa fa-comments"></i></h1>
+        </a>
+    </div> -->
 </footer>

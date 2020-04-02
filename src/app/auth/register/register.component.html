@@ -1,60 +1,69 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <!-- Alerta registro correcto -->
+            <div class="alert alert-success alert-dismissible fade show" *ngIf="status === 'success'" role="alert">
+                Usuario Registrado Correcatamente. <strong><a [routerLink]="['/auth/acceso']" class="alert-link">Acceder</a></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Alerta Error en el registro -->
+            <div class="alert alert-danger alert-dismissible fade show" *ngIf="status === 'error'" role="alert">
+                <strong>Error!</strong> Los datos ingresados son incorrectos.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
             <div class="card">
                 <div class="card-header">Registro</div>
-
                 <div class="card-body">
-                    <form>
-
-
+                    <form (ngSubmit)="onSubmit(registro)" #registro="ngForm">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Usuario</label>
-
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control " name="name" required autocomplete="name" autofocus>
-
-
-
-
+                                <input id="name" type="text" class="form-control " placeholder="Nombre de Usuario" [(ngModel)]="usuario.name" name="name" required autocomplete="name" autofocus>
+                                <span *ngIf="registro.touched && registro.controls['name'].errors" class="text-danger animared fadeIn">Este campo es obligatorio</span>
                             </div>
+                            <!-- <input type="hidden" value="cliente" [(ngModel)]="usuario.rol" name="rol"> -->
                         </div>
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
-
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control " name="email" required autocomplete="email">
+                                <input id="email" type="email" class="form-control " placeholder="Correo Electrónico" [(ngModel)]="usuario.email" name="email" required email autocomplete="email">
 
+                                <span *ngIf="registro.touched && registro.controls['email'].errors" class="text-danger animared fadeIn">Este campo es obligatorio</span>
 
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
-
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
-
-
+                                <input id="password" type="password" class="form-control " placeholder="Contraseña" [(ngModel)]="usuario.password" name="password" required maxlength="8" autocomplete="new-password">
+                                <span *ngIf=" registro.touched  && registro.controls['password'].errors" class="text-danger animared fadeIn">Este campo es obligatorio con 8 caractes</span>
                             </div>
                         </div>
-
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirmar Contraseña</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
-
+                        </div> -->
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-8 offset-md-3">
+                                <button type="submit" class="btn btn-primary" [disabled]="registro.invalid">
                                    Aceptar
                                 </button>
+                                <span for=""> Ya tengo mi cuenta.</span>
+                                <a class="btn btn-link" [routerLink]="['/auth/acceso']">
+                                       Acceder
+                                    </a>
                             </div>
+
                         </div>
+
+
                     </form>
                 </div>
             </div>
