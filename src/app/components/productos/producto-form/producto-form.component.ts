@@ -3,16 +3,16 @@ import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
 import {ProductoModel} from '../../../models/producto.model';
+import {ProductoService} from '../../../services/producto.service';
 @Component({
   selector: 'app-producto-form',
   templateUrl: './producto-form.component.html',
   styleUrls: ['./producto-form.component.css'],
-  providers: [AuthService]
+  providers: [AuthService, ProductoService]
 })
 export class ProductoFormComponent implements OnInit {
 
-    producto : ProductoModel = new ProductoModel();
-    
+  producto : ProductoModel = new ProductoModel();
   // producto = {
   //   titulo: null,
   //   categoria: '',
@@ -39,25 +39,53 @@ export class ProductoFormComponent implements OnInit {
   }];
 
   public page_title: string;
+  public identity;
+  public token;
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private auth: AuthService,
+    private _productoService: ProductoService,
   ) {
-    this.page_title = 'Alta producto'
+
+    this.page_title = 'Formulario de Carga de Productos';
+    this.identity = this.auth.getIdentity();
+    this.token = this.auth.getToken();
+
    }
 
   ngOnInit() {
-
+      // Verificar si hay un usuario logeado
+    if(this.identity == null && !this.identity.sub){
+      this._router.navigate(["/login"]);
+    }else{
+      // crear objeto producto
+      this.producto = new ProductoModel();    
+    }
+    
   }
 
   guardarProduct(forma: NgForm) {
-    console.log('ngForm', forma);
-    console.log('productos por defecto', this.producto);
-    console.log('productos', forma.value);
+    //  console.log('ngForm', forma);
+     console.log('productos por defecto', this.producto);
+    // console.log('productos', forma.value);
+    // console.log(this._productoService.pruebas());
 
+    this._productoService.create(this.token,this.producto).subscribe(
+      response =>{
+        console.log("entra"); 
+        console.log(response);
+        this.producto = response.producto;
+      },
+      error => {
+        console.log("No entra error"); 
+        console.log(<any>error);
+      }
+    )
   }
+  
+  
 
 
 }

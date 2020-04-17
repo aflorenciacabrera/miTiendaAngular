@@ -3,6 +3,7 @@ export class ProductoModel {
     categoria: string;
     precio: string;
     descripcion: string;
-    imagenProducto: string;
+    imagenProducto: string = null;
+    disponible:string;
 
 }
