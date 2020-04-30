@@ -8,10 +8,12 @@ import { PedidoListComponent } from './components/pedidos/pedido-list/pedido-lis
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DefaultComponent } from './components/default/default.component';
+import { ProductoEditComponent } from './components/productos/producto-edit/producto-edit.component';
 
 const APP_ROUTES: Routes = [
     {path: 'productos/galeria', component: ProductoGaleriaComponent},
     {path: 'productos/nuevo', component: ProductoFormComponent},
+    {path: 'productos/editar/:id', component: ProductoEditComponent},
     {path: 'clientes/lista', component: ClienteListComponent},
     {path: 'clientes/nuevo', component: ClienteFormComponent},
     {path: 'pedidos/lista', component: PedidoListComponent},

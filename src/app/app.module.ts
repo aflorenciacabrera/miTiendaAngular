@@ -24,6 +24,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DefaultComponent } from './components/default/default.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProductoEditComponent } from './components/productos/producto-edit/producto-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { environment } from '../environments/environment';
     LoginComponent,
     RegisterComponent,
     DefaultComponent,
+    ProductoEditComponent,
   ],
   imports: [
     HttpClientModule,
