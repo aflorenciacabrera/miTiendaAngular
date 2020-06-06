@@ -1,6 +1,6 @@
 <div class="form-row col-md-12">
     <div class="container">
-        <h4> {{page_title}}<small>Formulario de Carga de Productos</small></h4>
+        <h4>{{page_title}} <small></small></h4>
         <hr>
         <form (ngSubmit)="guardarProduct(forma)" #forma="ngForm">
 
@@ -43,6 +43,23 @@
             <div class="form-group ">
                 <label for="imagenProducto">Imagen</label>
                 <input type="file" class="form-control-file" id="imagenProducto" name="imagenProducto" [(ngModel)]="producto.imagenProducto">
+            </div>
+
+            <div class="form-row">
+                <div class="col-6 text-right">
+                    <label for="disponible">¿Disponible para la venta?</label>
+                </div>
+                <div class="col-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponible" value="true" #status="ngModel" [(ngModel)]="producto.disponible">
+                        <label class="form-check-label" for="disponible">Si</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponible" value="false" #status="ngModel" [(ngModel)]="producto.disponible">
+                        <label class="form-check-label" for="disponible">No</label>
+                    </div>
+
+                </div>
             </div>
 
             <div class="form-group  ">
