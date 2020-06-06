@@ -71,7 +71,7 @@ export class ProductoFormComponent implements OnInit {
      console.log('productos por defecto', this.producto);
     // console.log('productos', forma.value);
     // console.log(this._productoService.pruebas());
-
+    console.log('token', this.token);
     this._productoService.create(this.token,this.producto).subscribe(
       response =>{
         console.log("entra"); 
