@@ -57,6 +57,33 @@
                 <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Pedidos
                 </a>
+<<<<<<< HEAD
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['pedidos/nuevo']">Nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['pedidos/lista']">lista</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link " id="navbarDropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ventas
+                </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/']">Nueva</a>
+                        <a class="dropdown-item" [routerLink]="['/']">Gastos</a>
+                        <a class="dropdown-item" [routerLink]="['/']">Control</a>
+                        <a class="dropdown-item" [routerLink]="['/']"></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"></a>
+                    </div>
+                </li>
+            </ul>
+            
+        </ul>
+=======
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" [routerLink]="['pedidos/nuevo']">Nuevo</a>
                     <a class="dropdown-item" [routerLink]="['pedidos/lista']">lista</a>
@@ -85,6 +112,7 @@
 
         </ul>
 
+>>>>>>> e00729a5eb4bee6bec104431f21c7e63b25e9b29
         <!-- <form class="form-inline my-2 my-lg-0" *ngIf="identity">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Buscar</button>
@@ -106,7 +134,11 @@
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <div class="btn-group" role="group" aria-label="Basic example">
 
+<<<<<<< HEAD
+                    <a role="button" class="btn btn-outline-link text-white" href="#"><i class="fas fa-user"> </i> {{identity.name}}</a>
+=======
                     <a role="button" class="btn btn-link text-white" href="#">{{identity.name}}</a>
+>>>>>>> e00729a5eb4bee6bec104431f21c7e63b25e9b29
                     <a role="button" class="btn btn-outline-danger" [routerLink]="['logout', 1]"><i class="fas fa-sign-out-alt"> </i> </a>
 
                 </div>
@@ -117,3 +149,4 @@
 
     </div>
 </nav>
+
