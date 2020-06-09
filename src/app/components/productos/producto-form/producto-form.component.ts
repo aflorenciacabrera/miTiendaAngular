@@ -65,7 +65,14 @@ export class ProductoFormComponent implements OnInit {
     }
     
   }
-
+  subiendoando(event){
+    console.log(event)
+    let elemento = event.target;
+    if(elemento.files.length > 0){
+       this.producto.imagenProducto = elemento.files[0].name;
+      console.log(this.producto.imagenProducto )
+    }
+  }
   guardarProduct(forma: NgForm) {
     //  console.log('ngForm', forma);
      console.log('productos por defecto', this.producto);
