@@ -23,14 +23,25 @@ export class ProductoService {
 
   create(token, producto:ProductoModel): Observable<any>{
     console.log('servicio producto', producto);
-    let json = JSON.stringify(producto); 
-    let params = "json="+json;
-    console.log('servicio producto 2', params);
+    // let json = JSON.stringify(producto); 
+    // let params = "json="+json;
+    // console.log('servicio producto 2', params);
 
-    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
-                                    .set('Authorization', token);
+    let headers = new HttpHeaders()
+    // .set('Content-Type', 'application/x-www-form-urlencoded')
+    .set('Authorization', token);
     
-    return this.http.post( this.url+'/producto/crear',params,{headers} );
+    // return this.http.post( this.url+'/producto/crear',params,{headers} );
+    const formData = new FormData();
+    formData.append('titulo', producto.titulo);
+    formData.append('categoria', producto.categoria);
+    formData.append('precio', producto.precio);
+    formData.append('descripcion', producto.descripcion);
+    formData.append('disponible', producto.disponible);
+    formData.append('imagenProducto', producto.imagenProducto);
+  
+
+    return this.http.post<any>(this.url+'/producto/crear', formData,{headers});
   }
  
 
