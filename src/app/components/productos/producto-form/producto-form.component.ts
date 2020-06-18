@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
 import {ProductoModel} from '../../../models/producto.model';
+import { ProductoService } from 'src/app/services/producto.service';
 @Component({
   selector: 'app-producto-form',
   templateUrl: './producto-form.component.html',
@@ -12,7 +13,7 @@ import {ProductoModel} from '../../../models/producto.model';
 export class ProductoFormComponent implements OnInit {
 
     producto : ProductoModel = new ProductoModel();
-    
+    file:any;
   // producto = {
   //   titulo: null,
   //   categoria: '',
@@ -44,6 +45,7 @@ export class ProductoFormComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private auth: AuthService,
+    private producto_service: ProductoService
   ) {
     this.page_title = 'Alta producto'
    }
@@ -52,11 +54,19 @@ export class ProductoFormComponent implements OnInit {
 
   }
 
-  guardarProduct(forma: NgForm) {
-    console.log('ngForm', forma);
-    console.log('productos por defecto', this.producto);
-    console.log('productos', forma.value);
+  changeFile(e)
+  {
+    this.file = e.target.files;
+    console.log(this.file);
+    this.producto.imagenProducto = e.target.files[0];
+  }
 
+  guardarProduct(forma: NgForm) {
+    console.group("Formulario");
+   
+    this.producto_service.guardar(this.producto);
+    
+    console.groupEnd();
   }
 
 

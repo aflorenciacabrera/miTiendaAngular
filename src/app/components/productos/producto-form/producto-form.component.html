@@ -42,7 +42,7 @@
 
             <div class="form-group ">
                 <label for="imagenProducto">Imagen</label>
-                <input type="file" class="form-control-file" id="imagenProducto" name="imagenProducto" [(ngModel)]="producto.imagenProducto">
+                <input type="file" (change)="changeFile($event)" class="form-control-file" id="imagenProducto" name="imagenProducto"  >
             </div>
 
             <div class="form-group  ">
