@@ -12,7 +12,8 @@ import {ProductoService} from '../../../services/producto.service';
 })
 export class ProductoFormComponent implements OnInit {
 
-  producto : ProductoModel = new ProductoModel();
+    producto : ProductoModel = new ProductoModel();
+    file:any;
   // producto = {
   //   titulo: null,
   //   categoria: '',
@@ -65,20 +66,10 @@ export class ProductoFormComponent implements OnInit {
     }
     
   }
-  subiendoando(event){
-    let img:any = event.target;
-    if(img.files.length > 0){
-      this.loader = true;
-      let form = new FormData();
-      form.append('file',img.files[0]);
-      console.log(form);
-    }
-    
-    //   let elemento = event.target;
-    //   if(elemento.files.length > 0){
-    //     this.producto.imagenProducto = elemento.files[0].name;
-    //     console.log(this.producto.imagenProducto )
-    // }
+  subiendoando(e){
+    this.file = e.target.files;
+    console.log(this.file);
+    this.producto.imagenProducto = e.target.files[0];
   }
   guardarProduct(forma: NgForm) {
     //  console.log('ngForm', forma);
@@ -98,6 +89,9 @@ export class ProductoFormComponent implements OnInit {
       }
     )
   }
+
+
+ 
   
   
 
