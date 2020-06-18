@@ -20,7 +20,7 @@ export class ProductoFormComponent implements OnInit {
   //   descripcion: null,
   //   imagenProducto: null
   // };
-
+  loader:Boolean = false;
   catego = [{
     id: '1',
     descripcion: '3D',
@@ -66,12 +66,19 @@ export class ProductoFormComponent implements OnInit {
     
   }
   subiendoando(event){
-    console.log(event)
-    let elemento = event.target;
-    if(elemento.files.length > 0){
-       this.producto.imagenProducto = elemento.files[0].name;
-      console.log(this.producto.imagenProducto )
+    let img:any = event.target;
+    if(img.files.length > 0){
+      this.loader = true;
+      let form = new FormData();
+      form.append('file',img.files[0]);
+      console.log(form);
     }
+    
+    //   let elemento = event.target;
+    //   if(elemento.files.length > 0){
+    //     this.producto.imagenProducto = elemento.files[0].name;
+    //     console.log(this.producto.imagenProducto )
+    // }
   }
   guardarProduct(forma: NgForm) {
     //  console.log('ngForm', forma);
