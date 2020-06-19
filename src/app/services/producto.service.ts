@@ -43,7 +43,11 @@ export class ProductoService {
 
     return this.http.post<any>(this.url+'/producto/crear', formData,{headers});
   }
- 
+
+  getGaleria() {
+    const urlGaleria = this.url + '/producto/galeria';
+    return this.http.get(urlGaleria);
+  }
 
 }
 

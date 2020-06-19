@@ -1,93 +1,29 @@
 <div class="container">
-
     <br>
     <div class="card-columns">
-
+        <div *ngFor="let p of producto">
+           
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
+                <!-- <img src="http://127.0.0.1:8000/storage/images/10LmLXTmW4MfWTl7mrthdHS8wMzP25udpyO7jC7s.png" width="700" height="200" class="card-img-top" alt=""> -->
+                <div *ngIf="p.imagenProducto == null ">
+                    <img src="./assets/img/blank_product.png"  width="700" height="200" class="card-img-top" alt="">
+                </div>
+                <div *ngIf="p.imagenProducto != null">
+                <img src="{{url}}{{p.imagenProducto}}"  width="700" height="200" class="card-img-top" alt="">
+            </div>
             </div>
             <div class="card-body">
 
                 <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
+                    <h5 class="card-title">{{p.titulo}}</h5>
+                    <p class="card-text">{{p.precio}}</p>
+                    <p class="card-text">{{p.descripcion}}</p>
                     <a href="#" class="btn btn-primary">Ver mas</a>
                 </div>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
-            </div>
-            <div class="card-body">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
-                    <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
-            </div>
-            <div class="card-body">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
-                    <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
-            </div>
-            <div class="card-body">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
-                    <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
-            </div>
-            <div class="card-body">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
-                    <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                <img src="./assets/img/blank_product.png" width="700" height="200" class="card-img-top" alt="">
-            </div>
-            <div class="card-body">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">$</p>
-                    <p class="card-text">Descripcón</p>
-                    <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-            </div>
-        </div>
-
+    </div>
     </div>
 
 
