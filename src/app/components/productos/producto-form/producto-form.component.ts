@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {AuthService} from '../../../services/auth.service';
@@ -82,6 +82,7 @@ export class ProductoFormComponent implements OnInit {
         console.log("entra"); 
         console.log(response);
         this.producto = response.producto;
+        
       },
       error => {
         console.log("No entra error"); 

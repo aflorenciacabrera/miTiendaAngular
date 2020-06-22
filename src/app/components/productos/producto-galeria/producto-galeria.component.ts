@@ -9,6 +9,7 @@ import { ProductoModel } from 'src/app/models/producto.model';
 })
 export class ProductoGaleriaComponent implements OnInit {
   producto : ProductoModel = new ProductoModel();
+  imagenes: Array <''>;
   url ="http://127.0.0.1:8000/storage/";
  
   constructor(
@@ -16,7 +17,8 @@ export class ProductoGaleriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cargarGaleria();
+    // this.cargarGaleria();
+    this.cargarImagenes();
     
   }
 
@@ -29,4 +31,14 @@ export class ProductoGaleriaComponent implements OnInit {
         
       }
     )}
+
+    cargarImagenes(){
+      this._productoService.getImagenes().subscribe(
+        (result: any) => {
+          this.imagenes = result;
+          
+          console.log("imagen " + result);
+          
+        }
+      )}
 }

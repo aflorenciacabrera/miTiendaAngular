@@ -49,6 +49,11 @@ export class ProductoService {
     return this.http.get(urlGaleria);
   }
 
+  getImagenes() {
+    const urlImg = this.url + '/producto/imagenes';
+    return this.http.get(urlImg);
+  }
+
 }
 
 
