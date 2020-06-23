@@ -9,9 +9,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DefaultComponent } from './components/default/default.component';
 import { ProductoEditComponent } from './components/productos/producto-edit/producto-edit.component';
+import { ProductoCatalogoComponent } from './components/productos/producto-catalogo/producto-catalogo.component';
 
 const APP_ROUTES: Routes = [
     {path: 'productos/galeria', component: ProductoGaleriaComponent},
+    {path: 'productos/catalogo', component: ProductoCatalogoComponent},
     {path: 'productos/nuevo', component: ProductoFormComponent},
     {path: 'productos/editar/:id', component: ProductoEditComponent},
     {path: 'clientes/lista', component: ClienteListComponent},

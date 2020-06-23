@@ -1,19 +1,19 @@
 <div class="container">
     <br>
     <div class="card-columns">
-        <div *ngFor="let p of imagenes">
+        <div *ngFor="let p of producto">
            
         <div class="card" style="width: 18rem;">
             <div class="card-header">
                
-                <img src="http://127.0.0.1:8000/images/{{p}}"  width="700" height="200" class="card-img-top" alt="">
+                <!-- <img src="http://127.0.0.1:8000/images/{{p}}"  width="700" height="200" class="card-img-top" alt=""> -->
                 <!-- <img src="http://127.0.0.1:8000/storage/images/10LmLXTmW4MfWTl7mrthdHS8wMzP25udpyO7jC7s.png" width="700" height="200" class="card-img-top" alt=""> -->
-                <!-- <div *ngIf="p.imagenProducto == null ">
+                <div *ngIf="p.imagenProducto == null ">
                     <img src="./assets/img/blank_product.png"  width="700" height="200" class="card-img-top" alt="">
                 </div>
                 <div *ngIf="p.imagenProducto != null">
                 <img src="{{url}}{{p.imagenProducto}}"  width="700" height="200" class="card-img-top" alt="">
-                </div> -->
+                </div>
             </div>
             <div class="card-body">
 
@@ -27,7 +27,7 @@
         </div>
     </div>
     </div>
-
-
-
 </div>
+
+<!-- --------------------------------------------------------------------------------- -->
+

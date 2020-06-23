@@ -25,6 +25,7 @@ import { DefaultComponent } from './components/default/default.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProductoEditComponent } from './components/productos/producto-edit/producto-edit.component';
+import { ProductoCatalogoComponent } from './components/productos/producto-catalogo/producto-catalogo.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ProductoEditComponent } from './components/productos/producto-edit/prod
     RegisterComponent,
     DefaultComponent,
     ProductoEditComponent,
+    ProductoCatalogoComponent,
   ],
   imports: [
     HttpClientModule,
